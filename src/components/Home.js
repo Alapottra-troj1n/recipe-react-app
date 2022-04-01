@@ -1,11 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { MealContext } from '../App';
+import useMeals from './Custom-hooks/useMeals';
 import './Home.css'
 import Meal from './Meal/Meal';
 
 const Home = () => {
 
     const [userValue, setUserValue] = useState('');
-    const [meals, setMeals] = useState([]);
+
+    //Custom Hook
+    const [meals, setMeals] = useMeals(userValue);
+
+    //Context API 
+    const [hi,bye] = useContext(MealContext);
 
     const getUserInput = (e) => {
         setUserValue(e.target.value);
@@ -13,20 +20,12 @@ const Home = () => {
 
   
 
-    useEffect(() => {
-        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${userValue}`
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setMeals(data.meals))
-       
-
-       
-        
-    },[userValue])
-
     return (
         <div className='container'>
             <h2 className="app-title">Recipe React App</h2>
+            {/* context api */}
+            {hi}
+            {bye}
             <div className="meal-input-container">
             <input type="text" onChange={getUserInput} placeholder="Search Your Recipe" className="meal-input" />
             </div>
