@@ -72,3 +72,17 @@
     text-decoration: none;
     color: white;
 }
+@media screen and (max-width: 768px){
+
+.instruction{
+   
+    width: 80%;
+    
+}
+.ingredients{
+
+    width: 80%;
+ 
+}
+
+}

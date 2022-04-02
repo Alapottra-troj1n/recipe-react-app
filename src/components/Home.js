@@ -1,22 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { MealContext } from '../App';
 import useMeals from './Custom-hooks/useMeals';
 import './Home.css'
 import Meal from './Meal/Meal';
 
 const Home = () => {
-
     const [userValue, setUserValue] = useState('');
 
     //Custom Hook
     const [meals, setMeals] = useMeals(userValue);
 
     //Context API 
-    const [hi,bye] = useContext(MealContext);
 
     const getUserInput = (e) => {
         setUserValue(e.target.value);
     }
+
+  
 
   
 
@@ -34,10 +33,12 @@ const Home = () => {
                 <h2 className='meals-found'><small>Showing Recipes : {meals?.length ? meals?.length : <span className="colored">No Results Found</span> }</small> </h2>
                <div className="results-container">
 
-                   {meals?.map(meal => <Meal meal={meal} />)}
+                   {meals?.map(meal => <Meal meal={meal} key={meal.idMeal} />)}
+                 
 
                    
                </div>
+            
             </div>
         </div>
     );

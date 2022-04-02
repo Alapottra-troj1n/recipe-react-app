@@ -37,3 +37,32 @@
 .colored{
     color: #fe6d73;
 }
+
+@media screen and (max-width: 1068px){
+    .results-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .results-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .meal-input-container{
+        width: 80%;
+        height: 2rem;
+        margin: 3rem auto;
+    
+    }
+    .app-title{
+        
+       
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    .meals-found{
+        font-size: 1.2rem;
+    }
+
+
+}

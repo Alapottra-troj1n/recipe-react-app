@@ -12,11 +12,14 @@ const useMeals = (userValue) => {
         fetch(url)
         .then(res => res.json())
         .then(data => setMeals(data.meals))
+        
+      
        
 
        
         
     },[userValue])
+    
 
     return [meals, setMeals]
 };

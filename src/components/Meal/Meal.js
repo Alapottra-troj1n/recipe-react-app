@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Meal.css'
 
 const Meal = ({meal}) => {
-    console.log(meal);
     return (
         <div className="single-meal"> 
             <div className="img-container">
