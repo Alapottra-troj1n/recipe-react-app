@@ -1,0 +1,13 @@
+.more-details{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.recipe-name{
+    margin-top: 5rem;
+}
+.origin{
+    margin-top: .5rem;
+}

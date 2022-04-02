@@ -6,7 +6,6 @@
     background-color: rgba(214, 236, 154, 0.65);
     padding: 1.5rem;
     border-radius: 7px;
-    
 }
 
 .img-container{
@@ -24,5 +23,29 @@
 }
 .description{
     font-size: .9rem;
+    text-align: left;
    
+}
+.meal-btn{
+    border: none;
+    margin-top: 1rem;
+    padding: .7rem 2.5rem ;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: #fe6d73;
+    color:white;
+}
+.meal-details{
+    min-height: 170px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.meal-link{
+    text-decoration: none;
+    color: white;
 }

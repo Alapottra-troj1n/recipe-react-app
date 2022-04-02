@@ -22,18 +22,21 @@ const Home = () => {
 
     return (
         <div className='container'>
-            <h2 className="app-title">Recipe React App</h2>
+           
             {/* context api */}
-            {hi}
-            {bye}
+            {/* {hi}
+            {bye} */}
             <div className="meal-input-container">
             <input type="text" onChange={getUserInput} placeholder="Search Your Recipe" className="meal-input" />
             </div>
 
             <div className="meals-container">
-                <h2 className='meals-found'><small>Showing Recipes : {meals?.length ? meals?.length : 0}</small> </h2>
+                <h2 className='meals-found'><small>Showing Recipes : {meals?.length ? meals?.length : <span className="colored">No Results Found</span> }</small> </h2>
                <div className="results-container">
-                   {meals.map(meal => <Meal meal={meal} /> )}
+
+                   {meals?.map(meal => <Meal meal={meal} />)}
+
+                   
                </div>
             </div>
         </div>
