@@ -1,5 +1,7 @@
+import { faBackward, faVideo } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./MoreDetails.css";
 
 const MoreDetails = () => {
@@ -12,22 +14,16 @@ const MoreDetails = () => {
       .then((data) => setMealDetails(data.meals[0]));
   }, [id]);
 
+  const ingredients = Object.values(mealDetails).slice(9, 20);
 
- const ingredients = Object.values(mealDetails).slice(9,20);
- 
- const filtered = ingredients.filter((el) => {
-    return el !== null && typeof el !== 'undefined' && el !== '';
+  const filtered = ingredients.filter((el) => {
+    return el !== null && typeof el !== "undefined" && el !== "";
   });
   console.log(filtered);
- 
-  
-  
 
   return (
     <div className="more-details">
-
       <div className="more-details-header">
-
         <div className="details-img">
           <img src={mealDetails.strMealThumb} alt={mealDetails.strMeal} />
         </div>
@@ -35,15 +31,27 @@ const MoreDetails = () => {
           Recipe Name : <span className="colored">{mealDetails.strMeal}</span>{" "}
         </h2>
         <p className="origin">Origin: {mealDetails.strArea}</p>
-
       </div>
       <div className="ingredients">
-          {filtered.map(ingredient => <span className='ingredient' >{ingredient}</span>)}
-          
+        {filtered.map((ingredient) => (
+          <span className="ingredient">{ingredient}</span>
+        ))}
       </div>
-
-
-
+      <div className="instruction">
+        <p>{mealDetails.strInstructions}</p>
+      </div>
+      <div className="details-footer">
+        <button className="goback-btn">
+          <Link className="goback-btn-link" to="/">
+         <FontAwesomeIcon icon={faBackward} ></FontAwesomeIcon>   Go Back
+          </Link>
+        </button>
+        <button className="youtube-btn">
+          <a href={mealDetails.strYoutube} target="_blank">
+            Tutorial  <FontAwesomeIcon icon={faVideo} ></FontAwesomeIcon>
+          </a>
+        </button>
+      </div>
     </div>
   );
 };
