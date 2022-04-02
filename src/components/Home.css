@@ -37,6 +37,13 @@
 .colored{
     color: #fe6d73;
 }
+.spinner{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+}
 
 @media screen and (max-width: 1068px){
     .results-container{

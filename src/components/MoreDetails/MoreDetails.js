@@ -2,11 +2,12 @@ import { faBackward, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
 import "./MoreDetails.css";
 
 const MoreDetails = () => {
   const { id } = useParams();
-  const [mealDetails, setMealDetails] = useState("");
+  const [mealDetails, setMealDetails] = useState('');
 
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -22,7 +23,10 @@ const MoreDetails = () => {
   console.log(filtered);
 
   return (
+    
+  
     <div className="more-details">
+      {mealDetails === '' ? <Spinner/> : <>
       <div className="more-details-header">
         <div className="details-img">
           <img src={mealDetails.strMealThumb} alt={mealDetails.strMeal} />
@@ -52,6 +56,10 @@ const MoreDetails = () => {
           </a>
         </button>
       </div>
+      
+      </> }
+     
+
     </div>
   );
 };

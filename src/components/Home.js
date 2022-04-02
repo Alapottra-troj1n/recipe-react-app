@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import useMeals from './Custom-hooks/useMeals';
 import './Home.css'
 import Meal from './Meal/Meal';
+import Spinner from './Spinner/Spinner';
 
 const Home = () => {
     const [userValue, setUserValue] = useState('');
@@ -14,6 +15,7 @@ const Home = () => {
     const getUserInput = (e) => {
         setUserValue(e.target.value);
     }
+    
 
   
 
@@ -33,7 +35,7 @@ const Home = () => {
                 <h2 className='meals-found'><small>Showing Recipes : {meals?.length ? meals?.length : <span className="colored">No Results Found</span> }</small> </h2>
                <div className="results-container">
 
-                   {meals?.map(meal => <Meal meal={meal} key={meal.idMeal} />)}
+                   {meals.length ? meals?.map(meal => <Meal meal={meal} key={meal.idMeal} />) : <Spinner/>}
                  
 
                    
