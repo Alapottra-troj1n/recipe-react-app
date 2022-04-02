@@ -6,8 +6,26 @@
     align-items: center;
 }
 .recipe-name{
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 .origin{
     margin-top: .5rem;
+}
+.details-img{
+    width: 50%;
+    margin: 0rem auto;
+    margin-top: 5rem;
+}
+.details-img img{
+    width: 100%;
+    border-radius: 50%;
+}
+.ingredients{
+    margin-top: 2rem
+}
+.ingredient{
+    padding: 7px 7px;
+    margin: 5px 5px;
+    border-radius: 7px;
+    background-color: #fe6d724d
 }
