@@ -32,10 +32,12 @@ const Home = () => {
             </div>
 
             <div className="meals-container">
-                <h2 className='meals-found'><small>Showing Recipes : {meals?.length ? meals?.length : <span className="colored">No Results Found</span> }</small> </h2>
+                {meals.length ?  <h2 className='meals-found'><small>
+                    Showing Recipes : {meals?.length ? meals?.length : <span className="colored">No Results Found</span> }</small> </h2> : '' }
+               
                <div className="results-container">
 
-                   {meals.length ? meals?.map(meal => <Meal meal={meal} key={meal.idMeal} />) : <Spinner/>}
+                   {meals.length ? meals?.map(meal => <Meal meal={meal} key={meal.idMeal} />) : <div className="spinner-container"><Spinner/></div> }
                  
 
                    

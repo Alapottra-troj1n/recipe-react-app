@@ -48,12 +48,24 @@
 @media screen and (max-width: 1068px){
     .results-container{
         grid-template-columns: repeat(2, 1fr);
+        position: relative;
+        height: 40vh;
+    }
+    .spinner{
+      
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
     }
 }
 
 @media screen and (max-width: 768px){
     .results-container{
         grid-template-columns: repeat(1, 1fr);
+        position: relative;
+        width: 100%;
+        height: 40vh;
     }
     .meal-input-container{
         width: 80%;
@@ -70,6 +82,15 @@
     .meals-found{
         font-size: 1.2rem;
     }
+    .spinner-container{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+  
+   
+    
 
 
 }
